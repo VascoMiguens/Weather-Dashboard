@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body class="flex-column min-100-vh">
+    <header class="hero">
+      <h1 class="app-title">Weather Dashboard</h1>
+    </header>
+
+    <main class="flex-row justify-space-between">
+      <aside class="col-12 col-md-3">
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title">Search for a City:</h2>
+          </div>
+          <div class="card-body">
+            <form id="city-form">
+              <input
+                type="text"
+                id="city-input"
+                name="city"
+                autofocus="true"
+                class="form-input"
+                placeholder="Enter a location"
+              />
+              <button type="submit" class="btn">Search</button>
+            </form>
+          </div>
+        </div>
+        <div class="card">
+          <div id="recent-section" class="card-body"></div>
+        </div>
+      </aside>
+
+      <section
+        id="weather-section"
+        class="col-12 col-md-9"
+      >
+      </section>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>

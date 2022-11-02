@@ -1,0 +1,136 @@
+/*turn the colours into variables*/
+:root {
+  --dodge-blue: #005a9c;
+  --pearl: #e2dfd2;
+  --denim: #1560bd;
+  --dark: #000;
+  --border-radius: 0.2rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--pearl);
+  margin: 0;
+  padding: 0;
+  font-family: "Gill Sans", sans-serif;
+  color: var(--dark);
+  line-height: 1;
+  font-size: 16px;
+}
+
+h2 {
+  font-weight: 700;
+  margin: 0;
+  color: var(--dark);
+}
+
+main {
+  margin: 10px auto;
+  width: 98%;
+}
+
+.btn {
+  font-size: 1.3rem;
+  text-decoration: none;
+  padding: 6px 5px;
+  width: 100%;
+  display: block;
+  margin: 5px 0;
+  border-radius: var(--border-radius);
+  color: var(--dark);
+  border: none;
+  outline: none;
+  background-color: var(--denim);
+  box-shadow: 3px 3px var(--dodge-blue);
+  transform: translate(-1px, -1px);
+}
+
+.btn:hover {
+  color: var(--dodge-blue);
+  background-color: var(--night-blue-shadow);
+  transform: translate(0, 0);
+  box-shadow: 2px 2px var(--dark);
+}
+
+.hero {
+  padding: 3% 4%;
+  background-color: var(--dodge-blue);
+  color: var(--pearl);
+}
+
+.hero p {
+  max-width: 75%;
+}
+/* make app title round and with box shadow*/
+.app-title {
+  font-size: 3rem;
+  background-color: var(--pearl);
+  color: var(--dodge-blue);
+  padding: 0 10px;
+  display: inline-block;
+  border-radius: var(--border-radius);
+  box-shadow: 6px 5px var(--denim);
+}
+
+/* CARDS */
+.card {
+  margin: 0 0 10px 0;
+  border: 3px solid var(--dodge-blue);
+  border-radius: var(--border-radius);
+}
+.card-title {
+  padding-left: 4%;
+}
+
+.card-body {
+  padding: 4%;
+}
+
+/* align input with button and make it round */
+.form-input {
+  width: 100%;
+  padding: 4%;
+  margin: 5px 0;
+  font-size: 1rem;
+  border-radius: var(--border-radius);
+}
+
+/* flex the weather section in a column*/
+#weather-section {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Flex Options */
+.flex-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
+
+/* Resize Options*/
+.col-12 {
+  flex: 0 0 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .col-md-3 {
+    flex: 0 0 calc(100% * 3 / 12 - 2%);
+  }
+
+  .col-md-9 {
+    flex: 0 0 calc(100% * 9 / 12 - 2%);
+  }
+}

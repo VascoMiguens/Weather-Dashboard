@@ -5,13 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body class="flex-column min-100-vh">
     <header class="hero">
       <h1 class="app-title">Weather Dashboard</h1>
     </header>
-
     <main class="flex-row justify-space-between">
       <aside class="col-12 col-md-3">
         <div class="card">
@@ -36,13 +35,10 @@
           <div id="recent-section" class="card-body"></div>
         </div>
       </aside>
-
-      <section
-        id="weather-section"
-        class="col-12 col-md-9"
-      >
+      <section id="weather-section" class="col-12 col-md-9">
+        <div id="forecast" class="flex-row col-12"></div>
       </section>
     </main>
-    <script src="./script.js"></script>
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>

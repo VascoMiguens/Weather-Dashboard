@@ -2,6 +2,7 @@
 :root {
   --dodge-blue: #005a9c;
   --pearl: #e2dfd2;
+  --pearl-shadow: #f0eee6;
   --denim: #1560bd;
   --dark: #000;
   --border-radius: 0.2rem;
@@ -99,8 +100,8 @@ main {
 }
 
 #weather-section {
-  background-color: var(--dodge-blue);
   padding: 20px;
+  color: var(--pearl);
 }
 
 /* flex the current weather container in a row*/
@@ -109,6 +110,7 @@ main {
   flex-direction: row;
   justify-content: center;
   margin-top: 30px;
+  background-color: var(--dodge-blue);
 }
 
 #temperature-details {
@@ -120,7 +122,7 @@ main {
 
 #icon {
   width: 100px;
-  height: 100px;
+  height: 75px;
   text-align: center;
 }
 
@@ -130,6 +132,25 @@ main {
   border-bottom: 1px solid var(--pearl);
   align-self: end;
   padding-bottom: 10px;
+}
+
+#forecast {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.weather-card {
+  color: var(--dodge-blue);
+  background-color: var(--pearl);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 3px 3px var(--pearl-shadow);
+}
+
+.weather-card div {
+  margin-bottom: 5px;
 }
 
 /* Flex Options */

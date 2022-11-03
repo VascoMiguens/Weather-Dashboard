@@ -34,6 +34,7 @@ var formSubmitHandler = function (event) {
 
 var findCoords = function (search) {
   var apiURL = `${WEATHER_BASE_API_URL}geo/1.0/direct?q=${search}&limit=5&appid=${WEATHER_API_KEY}`;
+  weatherSect.innerHTML = "";
   fetch(apiURL)
     .then(function (response) {
       //if the response is 200
@@ -124,6 +125,7 @@ var displayCurrentWeather = function (currWeather) {
 var displayForecast = function (forecast) {
   //pass the object retrieved and concatenate desired path to variable
   var dayWeather = forecast.daily;
+  forecastCont.innerHTML = "";
   //create header element
   var forecastHeader = document.createElement("h4");
   forecastHeader.textContent = "5 Day Forecast";
@@ -132,7 +134,6 @@ var displayForecast = function (forecast) {
   //append elements
   weatherSect.appendChild(forecastHeader);
   weatherSect.appendChild(forecastCont);
-  forecastCont.innerHTML = "";
   //First element of the retrieved object is already displayed so start at index 1 and return the next 5
   for (var i = 1; i < 6; i++) {
     var daily = dayWeather[i];
@@ -167,6 +168,47 @@ var displayForecast = function (forecast) {
   }
 };
 
+var loadSearch = function () {
+  //check if userSearch array exists and display it
+  if (userSearch) {
+    displaySearch();
+  }
+};
 
+var saveEntry = function (item) {
+  //check if the item search already exists
+  var searchExists = userSearch.find((search) => search == item);
 
+  //if the item exists
+  if (searchExists) {
+    //return empty
+    return;
+  } else {
+    //if item doesnt exist push it into userSearch array
+    userSearch.unshift(item);
+    //save it in local storage
+    localStorage.setItem("search", JSON.stringify(userSearch));
+    //call displaySearch functiom to create new item div
+    displaySearch();
+  }
+};
+
+var displaySearch = function () {
+  //clear recent=section and avoid duplicates
+  search.innerHTML = "";
+  userSearch.splice(5);
+  //iterate through each userSearch item and create div and append it to recent-item container
+  for (var i = 0; i < userSearch.length; i++) {
+    var city = document.createElement("div");
+    city.classList.add("recent-item");
+    city.addEventListener("click", recentEntry);
+    city.textContent = userSearch[i];
+    search.appendChild(city);
+  }
+};
+
+var recentEntry = function (e) {
+  findCoords(e.target.textContent);
+};
+loadSearch();
 cityForm.addEventListener("submit", formSubmitHandler);

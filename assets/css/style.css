@@ -33,6 +33,7 @@ main {
   width: 98%;
 }
 
+/* Search Button*/
 .btn {
   font-size: 1.3rem;
   text-decoration: none;
@@ -50,10 +51,10 @@ main {
 }
 
 .btn:hover {
-  color: var(--dodge-blue);
-  background-color: var(--night-blue-shadow);
+  background-color: var(--denim);
   transform: translate(0, 0);
   box-shadow: 2px 2px var(--dark);
+  cursor: pointer;
 }
 
 .hero {
@@ -76,7 +77,7 @@ main {
   box-shadow: 6px 5px var(--denim);
 }
 
-/* CARDS */
+/* Search Section */
 .card {
   margin: 0 0 10px 0;
   border: 3px solid var(--dodge-blue);
@@ -90,6 +91,19 @@ main {
   padding: 4%;
 }
 
+/* recent Searches */
+.recent-item {
+  width: 100%;
+  height: 100%;
+  background-color: var(--pearl-shadow);
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 4px;
+  padding: 5px;
+  cursor: pointer;
+  box-shadow: 1px 1px black;
+}
+
 /* align input with button and make it round */
 .form-input {
   width: 100%;
@@ -99,11 +113,13 @@ main {
   border-radius: var(--border-radius);
 }
 
+/* Weather Section */
 #weather-section {
   padding: 20px;
   color: var(--pearl);
 }
 
+/* Current Weather Section */
 /* flex the current weather container in a row*/
 #current-weather {
   display: flex;
@@ -112,7 +128,7 @@ main {
   margin-top: 30px;
   background-color: var(--dodge-blue);
 }
-
+/* Display temperature details in a grid with two columns */
 #temperature-details {
   display: grid;
   grid-template-columns: repeat(2, auto);
@@ -125,7 +141,7 @@ main {
   height: 75px;
   text-align: center;
 }
-
+/* Weather detaisl sections */
 #temperature-details div {
   font-size: 20px;
   font-weight: 700;

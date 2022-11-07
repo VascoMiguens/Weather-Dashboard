@@ -116,7 +116,7 @@ var displayCurrentWeather = function (currWeather) {
           <div>Visibility: ${today.visibility} m</div>
           <div>Humidity: ${today.humidity}%</div>
           <div>Dew Point: ${today.dew_point} C</div>
-          <div>UV Index: ${today.uvi} nm</div>
+          <div>UV Index: ${today.uvi}</div>
         </div>
   `;
   /*Append the current day weather to the weather section contaienr */

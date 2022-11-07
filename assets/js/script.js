@@ -21,14 +21,12 @@ var formSubmitHandler = function (event) {
   if (city) {
     //call findCoords functions and pass the input value
     findCoords(city);
-    //clear the input value
-    cityInput.innerHTML = "";
     //clear the weather section
     weatherSect.innerHTML = "";
     //if no submission has been made
   } else {
     //alert the user to enter a city name
-    alert("Please enter a city");
+    weatherSect.innerHTML = "No city found";
   }
 };
 
@@ -45,27 +43,34 @@ var findCoords = function (search) {
           var location = data[0];
           displayCityandCountry(location);
         });
-      } else {
-        //alert the user if nothing is returned
-        alert("Error: " + response.statusText);
       }
     })
     //catch the error if no connection was made
     .catch(function (error) {
-      alert("Unable to connect");
+      console.log("Unable to connect" + error.message);
     });
 };
 
 var displayCityandCountry = function (weatherData) {
-  //create h2 element that will holde city and country
-  citySearched = document.createElement("h2");
-  citySearched.style.color = "#e2dfd2";
-  citySearched.innerHTML = `${weatherData.name}, ${weatherData.country}`;
-  //append the city and country to the section
-  weatherSect.appendChild(citySearched);
-  //cal function to get object with weather details and pass longitude and latitude
-  getWeatherDetails(weatherData.lat, weatherData.lon);
-  saveEntry(weatherData.name);
+  //if no city is found want user
+  if (weatherData == undefined) {
+    var noCityFound = document.createElement("h2");
+    noCityFound.textContent = "No city found";
+    weatherSect.appendChild(noCityFound);
+    cityInput.value = "";
+  } else {
+    //create h2 element that will holde city and country
+    citySearched = document.createElement("h2");
+    citySearched.style.color = "#e2dfd2";
+    citySearched.innerHTML = `${weatherData.name}, ${weatherData.country}`;
+    //append the city and country to the section
+    weatherSect.appendChild(citySearched);
+    //cal function to get object with weather details and pass longitude and latitude
+    getWeatherDetails(weatherData.lat, weatherData.lon);
+    saveEntry(weatherData.name);
+    //clear the input value
+    cityInput.value = "";
+  }
 };
 
 //get weather details and call functions to display current weather
@@ -197,9 +202,10 @@ var saveEntry = function (item) {
 };
 
 var displaySearch = function () {
-  //clear recent=section and avoid duplicates
+  //clear recent section and avoid duplicates
   search.innerHTML = "";
-  userSearch.splice(5);
+  //limit results to the first 10 in the array
+  userSearch.splice(10);
   //iterate through each userSearch item and create div and append it to recent-item container
   for (var i = 0; i < userSearch.length; i++) {
     var city = document.createElement("div");

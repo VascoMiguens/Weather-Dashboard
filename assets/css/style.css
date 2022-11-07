@@ -78,11 +78,6 @@ main {
 }
 
 /* Search Section */
-.card {
-  margin: 0 0 10px 0;
-  border: 3px solid var(--dodge-blue);
-  border-radius: var(--border-radius);
-}
 .card-title {
   padding-left: 4%;
 }

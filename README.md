@@ -31,11 +31,11 @@ This project is the sixth challenge of a bootcamp where students had to develop 
    - Wind Speed
    - Humidity Temperature
    
-   ## Preview
+ ## Preview
    
-   ![](https://github.com/VascoMiguens/Weather-Dashboard/blob/main/assets/weather-dashboard-preview.png)
+ ![](https://github.com/VascoMiguens/Weather-Dashboard/blob/main/assets/weather-dashboard-preview.png)
    
-   ## Link 
+ ## Link 
    
    https://vascomiguens.github.io/Weather-Dashboard/
     

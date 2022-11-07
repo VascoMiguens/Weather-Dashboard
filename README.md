@@ -6,7 +6,7 @@ This project is the sixth challenge of a bootcamp where students had to develop 
 
 * A weather dashboard where the current weather and a forecast of the next 5 days is displayed
 * A input form is used to call Third Party API OpenWeather and retrieve the data
-* The user search is stored in local storage and will display the last 5 user searches below the input form
+* The user search is stored in local storage and will display the last 10 user searches below the input form
 * The user can click the previous serches and it will display the the current wetaher and forecast for the next 5 days
 * The current weather will display: 
   - The city and country

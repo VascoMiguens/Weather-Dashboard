@@ -8,11 +8,14 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body class="flex-column min-100-vh">
+    <!-- Hero Section-->
     <header class="hero">
       <h1 class="app-title">Weather Dashboard</h1>
     </header>
+    <!--Main Sections-->
     <main class="flex-row justify-space-between">
       <aside class="col-12 col-md-3">
+        <!--User Search UI-->
         <div class="card">
           <div class="card-header">
             <h2 class="card-title">Search for a City:</h2>
@@ -31,10 +34,12 @@
             </form>
           </div>
         </div>
+        <!--Resent Searches-->
         <div class="card">
           <div id="recent-section" class="card-body"></div>
         </div>
       </aside>
+      <!--Weather UI-->
       <section id="weather-section" class="col-12 col-md-9">
         <div id="current-weather" class="col-12"></div>
         <div id="forecast" class="flex-row col-12"></div>

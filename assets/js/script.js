@@ -6,7 +6,7 @@ var forecastCont = document.querySelector("#forecast");
 var search = document.querySelector("#recent-section");
 var citySearched;
 var formatDay = { day: "numeric", month: "numeric", year: "numeric" };
-
+//get local storage previous searches
 var userSearch = JSON.parse(localStorage.getItem("search")) || [];
 
 var WEATHER_BASE_API_URL = "https://api.openweathermap.org/";
@@ -85,7 +85,7 @@ var displayCurrentWeather = function (currWeather) {
   var today = currWeather.current;
   //format the hour
   var fomatHour = { hour: "numeric", minute: "numeric" };
-  //convert UNIX time to human readble time
+  //convert UNIX time to human readable time
   var tempUNIX = new Date(today.dt * 1000);
   var sunrise = new Date(today.sunrise * 1000);
   var sunset = new Date(today.sunset * 1000);
@@ -119,6 +119,7 @@ var displayCurrentWeather = function (currWeather) {
           <div>UV Index: ${today.uvi} nm</div>
         </div>
   `;
+  /*Append the current day weather to the weather section contaienr */
   weatherSect.appendChild(weatherCurr);
 };
 
@@ -139,6 +140,7 @@ var displayForecast = function (forecast) {
     var daily = dayWeather[i];
     var day = new Date(daily.dt * 1000).toLocaleDateString("en-GB", formatDay);
     var newDay = document.createElement("div");
+    /*Populate the newDay Div*/
     newDay.innerHTML = `
       <div class="weather-card">
         <div class="date">
@@ -164,6 +166,7 @@ var displayForecast = function (forecast) {
           </span>
         </div>
     `;
+    /*Append the newDay to the forecast Container */
     forecastCont.appendChild(newDay);
   }
 };
@@ -207,6 +210,7 @@ var displaySearch = function () {
   }
 };
 
+//function to display weather if user clicks past search input
 var recentEntry = function (e) {
   findCoords(e.target.textContent);
 };
